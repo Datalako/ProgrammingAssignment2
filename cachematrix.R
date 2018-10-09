@@ -14,7 +14,9 @@ list(set = set,
      getinverse = getinverse)
 }
 
-#cacheSolve: This function computes the inverse of the special "matrix" returned by makeCacheMatrix above. If the inverse has already been calculated (and the matrix has not changed), then the cachesolve should retrieve the inverse from the cache.
+#cacheSolve: This function computes the inverse of the special "matrix" returned by makeCacheMatrix above. 
+#If the inverse has already been calculated (and the matrix has not changed),
+#then the cachesolve should retrieve the inverse from the cache.
 cacheSolve<-function(x, ...) {
   a <- x$getinverse()
   if(!is.null(a)) {
@@ -26,3 +28,4 @@ cacheSolve<-function(x, ...) {
   x$setinverse(a)
   a
 }
+
